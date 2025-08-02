@@ -279,6 +279,20 @@
       .message { font-size: 1.8rem; }
       .image-gallery { height: 240px; }
     }
+
+    .header, .footer, .countdown-container {
+      transition: opacity 0.5s ease;
+    }
+    
+    /* When hidden */
+    .header.hidden, .footer.hidden, .countdown-container.hidden {
+      opacity: 0;
+      height: 0;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+      transition: all 0.5s ease;
+    }
   </style>
 </head>
 <body>
@@ -330,10 +344,7 @@
       <button class="nav-btn" id="prev-btn"><i class="fas fa-arrow-left"></i> Previous</button>
       <button class="nav-btn" id="next-btn">Next <i class="fas fa-arrow-right"></i></button>
     </div>
-    
-    <div class="footer">
-      Get ready for the best celebration ever!
-    </div>
+  
   </div>
 
   <script>
@@ -392,31 +403,35 @@
     }
     
     function celebrateBirthday() {
-      // Set all countdown values to zero
-      daysEl.textContent = '00';
-      hoursEl.textContent = '00';
-      minutesEl.textContent = '00';
-      secondsEl.textContent = '00';
-      
-      // Hide countdown
-      countdownContainer.style.display = 'none';
-      
-      // Show birthday message
-      messageEl.style.display = 'block';
-      
-      // Show image gallery
-      imageGallery.style.display = 'block';
-      galleryNav.style.display = 'flex';
-      
-      // Start the image slideshow
-      startSlideshow();
-      
-      // Create confetti effect
-      createConfetti();
-      
-      // Add celebration effect every few seconds
-      setInterval(createConfetti, 2000);
-    }
+    // Hide all text elements
+    document.querySelector('.header').style.display = 'none';
+    document.querySelector('.footer').style.display = 'none';
+    
+    // Set all countdown values to zero
+    daysEl.textContent = '00';
+    hoursEl.textContent = '00';
+    minutesEl.textContent = '00';
+    secondsEl.textContent = '00';
+    
+    // Hide countdown container
+    countdownContainer.style.display = 'none';
+    
+    // Show birthday message
+    messageEl.style.display = 'block';
+    
+    // Show image gallery
+    imageGallery.style.display = 'block';
+    galleryNav.style.display = 'flex';
+    
+    // Start the image slideshow
+    startSlideshow();
+    
+    // Create confetti effect
+    createConfetti();
+    
+    // Add celebration effect every few seconds
+    setInterval(createConfetti, 2000);
+  }
     
     function startSlideshow() {
       // Show the first image
