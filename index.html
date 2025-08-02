@@ -317,11 +317,12 @@
   <script>
     // Set the birthday date (Year, Month, Day, Hour, Minute)
     const birthday = new Date();
-    birthday.setMonth(7); // August (0=January, 11=December)
-    birthday.setDate(3); // 3rd day
-    birthday.setHours(14); // 2 PM
-    birthday.setMinutes(0);
-    birthday.setSeconds(0);
+    birthday.setSeconds(birthday.getSeconds() + 10);
+    // birthday.setMonth(7); // August (0=January, 11=December)
+    // birthday.setDate(3); // 3rd day
+    // birthday.setHours(14); // 2 PM
+    // birthday.setMinutes(0);
+    // birthday.setSeconds(0);
     
     // DOM elements
     const hoursEl = document.getElementById('hours');
