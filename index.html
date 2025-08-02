@@ -378,16 +378,15 @@
     // Update countdown every second
     const countdownInterval = setInterval(updateCountdown, 1000);
     
-    function updateCountdown() {
-      const now = new Date();
-      const diff = birthday - now;
-      
-      // If birthday has arrived
-      if (diff <= 0) {
-        clearInterval(countdownInterval);
-        celebrateBirthday();
-        return;
-      }
+  function updateCountdown() {
+    const now = new Date();
+    const diff = birthday - now;
+    
+    if (diff <= 0) {
+      clearInterval(countdownInterval);
+      celebrateBirthday();
+      return; // This stops the function here
+    }
       
       // Calculate time units
       const days = Math.floor(diff / (1000 * 60 * 60 * 24));
@@ -403,9 +402,8 @@
     }
     
     function celebrateBirthday() {
-    // Hide all text elements
+    // Hide the header (title and subtitle)
     document.querySelector('.header').style.display = 'none';
-    document.querySelector('.footer').style.display = 'none';
     
     // Set all countdown values to zero
     daysEl.textContent = '00';
@@ -413,7 +411,7 @@
     minutesEl.textContent = '00';
     secondsEl.textContent = '00';
     
-    // Hide countdown container
+    // Hide countdown container (boxes)
     countdownContainer.style.display = 'none';
     
     // Show birthday message
