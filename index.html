@@ -335,11 +335,12 @@ h1 {
     // Set the birthday date (Year, Month, Day, Hour, Minute)
     // Note: Months are 0-indexed (0 = January, 11 = December)
     const birthday = new Date();
-    birthday.setMonth(7); // August (0=January, 11=December)
-    birthday.setDate(2); // 3rd day of the month
-    birthday.setHours(12); // 2 PM (24-hour format)
-    birthday.setMinutes(56);
-    birthday.setSeconds(0);
+    birthday.setSeconds(birthday.getSeconds() + 5);
+    // birthday.setMonth(7); // August (0=January, 11=December)
+    // birthday.setDate(2); // 3rd day of the month
+    // birthday.setHours(12); // 2 PM (24-hour format)
+    // birthday.setMinutes(56);
+    // birthday.setSeconds(0);
     
     // DOM elements
     const daysEl = document.getElementById('days');
