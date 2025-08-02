@@ -351,13 +351,11 @@
     // Set the birthday date (Year, Month, Day, Hour, Minute)
     // Note: Months are 0-indexed (0 = January, 11 = December)
     const birthday = new Date();
-    // Set birthday to today + 10 seconds for demo purposes
-    birthday.setSeconds(birthday.getSeconds() + 10);
-    // birthday.setMonth(7); // August (0=January, 11=December)
-    // birthday.setDate(3); // 3rd day of the month
-    // birthday.setHours(2); // 2 PM (24-hour format)
-    // birthday.setMinutes(0);
-    // birthday.setSeconds(0);
+    birthday.setMonth(7); // August (0=January, 11=December)
+    birthday.setDate(2); // 3rd day of the month
+    birthday.setHours(12); // 2 PM (24-hour format)
+    birthday.setMinutes(52);
+    birthday.setSeconds(0);
     
     // DOM elements
     const daysEl = document.getElementById('days');
